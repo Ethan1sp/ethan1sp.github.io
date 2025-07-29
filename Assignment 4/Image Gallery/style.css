@@ -1,72 +1,84 @@
-/* Ethan Noshie - style.css - Image Gallery - 29 July 2025 */
+/* Center everything */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  width: 640px;
+  margin: 20px auto;
+  background-color: #f9f9f9;
+  color: #333;
+}
 
 h1 {
-  font-family: Helvetica, Arial, sans-serif;
   text-align: center;
   margin-bottom: 20px;
 }
 
-body {
-  max-width: 640px;
-  margin: 0 auto;
-  font-family: sans-serif;
-  background-color: #f8f8f8;
-  padding: 20px;
-}
-
+/* Container for main image */
 .full-img {
   position: relative;
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.displayed-img {
-  width: 100%;
-  height: auto;
-  display: block;
+  width: 640px;
+  height: 480px;
+  margin-bottom: 15px;
   border: 2px solid #ccc;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+/* Main displayed image fills container */
+.displayed-img {
+  width: 640px;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay for darkening */
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 640px;
+  height: 480px;
   background-color: rgba(0,0,0,0);
-  pointer-events: none;
   transition: background-color 0.3s ease;
 }
 
+/* Darken/Lighten button */
 button {
-  border: 1px solid #999;
-  background: rgba(150,150,150,0.6);
-  text-shadow: 1px 1px 1px white;
   position: absolute;
-  cursor: pointer;
   top: 10px;
   left: 10px;
+  background: rgba(150,150,150,0.7);
+  border: 1px solid #999;
+  color: white;
+  font-weight: bold;
   padding: 6px 12px;
-  font-size: 14px;
-  z-index: 2;
+  cursor: pointer;
+  text-shadow: 1px 1px 1px black;
+  user-select: none;
+  transition: background-color 0.2s ease;
 }
 
+button:hover {
+  background: rgba(150,150,150,0.9);
+}
+
+/* Thumbnail bar container */
 .thumb-bar {
   display: flex;
-  gap: 5px;
-  flex-wrap: wrap;
   justify-content: center;
+  gap: 10px;
 }
 
+/* Thumbnails */
 .thumb-bar img {
-  width: 120px;
-  height: auto;
+  width: 100px;
+  height: 75px;
+  object-fit: cover;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: border 0.2s ease;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  transition: border-color 0.2s ease;
 }
 
 .thumb-bar img:hover {
-  border: 2px solid #666;
+  border-color: #333;
 }
